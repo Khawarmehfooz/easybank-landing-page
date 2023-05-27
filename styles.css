@@ -156,15 +156,13 @@ nav {
   padding: 6rem 0;
 }
 .articles__container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
   gap: 2rem;
   margin-top: 3rem;
-  flex-wrap: wrap;
 }
 .card {
-  width: 250px;
   background-color: var(--white);
 }
 .card__img {
@@ -243,6 +241,9 @@ footer .container {
   }
   .features__container {
     flex-wrap: wrap;
+  }
+  .articles__container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 768px) {
@@ -327,7 +328,7 @@ footer .container {
   }
   /* Article Container */
   .articles__container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
   .card {
     width: 100%;
