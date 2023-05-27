@@ -164,7 +164,7 @@ nav {
   flex-wrap: wrap;
 }
 .card {
-  width: 270px;
+  width: 250px;
   background-color: var(--white);
 }
 .card__img {
