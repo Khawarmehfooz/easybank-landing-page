@@ -57,6 +57,8 @@ body {
 header {
   padding: 1rem 0;
   background-color: var(--white);
+  position: absolute;
+  width: 100%;
   z-index: 9999;
 }
 /* Navbar */
@@ -75,7 +77,7 @@ nav {
 .nav__link {
   list-style-type: none;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1rem;
   color: var(--grayish-blue);
 }
 .btn {
@@ -97,17 +99,21 @@ nav {
 /* Hero Section */
 .hero {
   background-color: var(--very-light-gray);
+  background-image: url(./images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 1060px;
+  background-position: top -100px right -233px;
 }
 .hero .container {
   display: flex;
   position: relative;
 }
 .hero .container .hero__left {
-  width: 25rem; /*400px*/
-  padding: 10rem 0;
+  width: 27rem; /*432px*/
+  padding: 12rem 0;
 }
 .hero__title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 0;
 }
 #mockup__img {
@@ -118,7 +124,7 @@ nav {
 /* Features Section */
 .features {
   background-color: var(--light-grayish-blue);
-  padding: 4rem 0;
+  padding: 6rem 0;
   margin-bottom: 0;
 }
 .features__title {
@@ -132,8 +138,13 @@ nav {
 .features__container {
   margin-top: 4rem;
   display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2.5rem;
+}
+.col {
+  width: 250px;
 }
 .col__title {
   font-size: 1.5rem;
@@ -142,15 +153,18 @@ nav {
 .articles {
   background-color: var(--very-light-gray);
   margin-top: 0;
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 .articles__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
 }
 .card {
-  width: 17.5rem; /*280px*/
+  width: 270px;
   background-color: var(--white);
 }
 .card__img {
@@ -196,10 +210,42 @@ footer .container {
 .footer__link a {
   color: var(--light-grayish-blue);
 }
-.col .btn {
+.footer-col .btn {
   width: fit-content;
 }
+@media (max-width: 1200px) {
+  .hero {
+    background-size: 850px;
+  }
+}
 @media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+  .hero {
+    background-size: 960px;
+  }
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero .container .hero__left {
+    padding: 8rem 0;
+    width: 25rem;
+  }
+  .hero__description {
+    width: 22rem;
+  }
+  #mockup__img {
+    width: 500px;
+    top: -25px;
+    right: -140px;
+    /* aspect-ratio: 1; */
+  }
+  .features__container {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
   nav {
     position: relative;
   }
@@ -221,5 +267,84 @@ footer .container {
   }
   #menu-open {
     display: block;
+  }
+  .hero__title {
+    font-size: 2.25rem;
+  }
+  .hero .container .hero__left {
+    padding: 7rem 0;
+    width: 22rem;
+  }
+  .hero__description {
+    width: 20rem;
+  }
+  #mockup__img {
+    width: 450px;
+    top: -25px;
+    right: -140px;
+  }
+}
+@media (max-width: 690px) {
+  .hero {
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-position: top right;
+    background-size: contain;
+  }
+  .hero .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  #mockup__img {
+    position: relative;
+    right: 0;
+    width: 400px;
+    /* inset: -110px 0 0 0; */
+  }
+  .hero .container .hero__left {
+    padding: 0 0 5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  .hero__description {
+    width: 100%;
+  }
+  /* Features */
+  .features__container {
+    flex-direction: column;
+  }
+  .features__title {
+    text-align: center;
+    width: 100%;
+  }
+  .features__description {
+    text-align: center;
+    width: 100%;
+  }
+  .col {
+    width: 100%;
+    text-align: center;
+  }
+  /* Article Container */
+  .articles__container {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+  /* Footer */
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-col {
+    text-align: center;
+  }
+  .footer-col ul {
+    padding: 0;
+  }
+  .footer-col .btn {
+    margin-inline: auto;
   }
 }
